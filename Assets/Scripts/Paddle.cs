@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
+    // Defining the a speed variable to augment the movement of the paddle
+    // This variable is public so that we can see an input right in the unity editor
+    public float speed = 10.0f;
     // Defining an empty variable called _rigidbody of type Rigidbody2D
     // Variable is protected so that inheritor classes can also access it but its still private
     protected Rigidbody2D _rigidbody;
