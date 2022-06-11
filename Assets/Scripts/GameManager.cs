@@ -3,6 +3,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Ball ball;
+    public Paddle playerPaddle;
+    public Paddle computerPaddle;
     public Text playerScoreText;
     public Text computerScoreText;
     // Defining the score variables
