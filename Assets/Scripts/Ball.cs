@@ -14,6 +14,13 @@ public class Ball : MonoBehaviour
 
     // Start is called the very first frame that this script is executed
     private void Start() {
+        ResetPosition();
+    }
+    public void ResetPosition()
+    {
+        _rigidbody.position = Vector3.zero;
+        _rigidbody.velocity = Vector3.zero;
+
         AddStartingForce();
     }
 
@@ -36,4 +43,7 @@ public class Ball : MonoBehaviour
     {
         _rigidbody.AddForce(force);
     }
+
+    // This will allow us to reset the position and volocity to 0 when the game completes
+    // Also re-add our starting force
 }
