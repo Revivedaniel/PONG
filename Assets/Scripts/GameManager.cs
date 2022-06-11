@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     public Paddle computerPaddle;
     public Text playerScoreText;
     public Text computerScoreText;
-    // Defining the score variables
     private int _playerScore;
     private int _computerScore;
 
@@ -16,9 +15,8 @@ public class GameManager : MonoBehaviour
     {
         _playerScore++;
         // Setting the player score text to the current score
-        this.playerScoreText.text = _playerScore.ToString();        
-        this.ball.ResetPosition();
-        this.ball.AddStartingForce();
+        this.playerScoreText.text = _playerScore.ToString();  
+        resetRound();
     }
 
     public void ComputerScores()
@@ -26,6 +24,13 @@ public class GameManager : MonoBehaviour
         _computerScore++;
         // Setting the computer score text to the current score
         this.computerScoreText.text = _computerScore.ToString();
+        resetRound();
+    }
+
+    private void resetRound()
+    {
+        this.playerPaddle.resetPosition();     
+        this.computerPaddle.resetPosition();     
         this.ball.ResetPosition();
         this.ball.AddStartingForce();
     }
