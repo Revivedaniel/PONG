@@ -1,9 +1,12 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Ball ball;
-    // Defining the score variables
+    public Paddle playerPaddle;
+    public Paddle computerPaddle;
+    public Text playerScoreText;
+    public Text computerScoreText;
     private int _playerScore;
     private int _computerScore;
 
@@ -11,17 +14,25 @@ public class GameManager : MonoBehaviour
     public void PlayerScores()
     {
         _playerScore++;
-        Debug.Log(_playerScore);
-        
-        this.ball.ResetPosition();
+        // Setting the player score text to the current score
+        this.playerScoreText.text = _playerScore.ToString();  
+        resetRound();
     }
 
     public void ComputerScores()
     {
         _computerScore++;
-        Debug.Log(_computerScore);
+        // Setting the computer score text to the current score
+        this.computerScoreText.text = _computerScore.ToString();
+        resetRound();
+    }
 
+    private void resetRound()
+    {
+        this.playerPaddle.resetPosition();     
+        this.computerPaddle.resetPosition();     
         this.ball.ResetPosition();
+        this.ball.AddStartingForce();
     }
 
     

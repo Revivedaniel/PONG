@@ -15,16 +15,16 @@ public class Ball : MonoBehaviour
     // Start is called the very first frame that this script is executed
     private void Start() {
         ResetPosition();
+        AddStartingForce();
     }
     public void ResetPosition()
     {
         _rigidbody.position = Vector3.zero;
         _rigidbody.velocity = Vector3.zero;
 
-        AddStartingForce();
     }
 
-    private void AddStartingForce()
+    public void AddStartingForce()
     {
         // This will choose a random value between 0 and 1
         // If the value is less than 0.5, it will set the direction to left

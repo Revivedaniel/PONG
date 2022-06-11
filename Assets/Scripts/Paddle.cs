@@ -16,4 +16,9 @@ public class Paddle : MonoBehaviour
         // will return it and assign it to the _rigidbody varable.
         _rigidbody = GetComponent<Rigidbody2D>();
     }
+    public void resetPosition()
+    {
+        _rigidbody.position = new Vector2(_rigidbody.position.x, 0.0f);
+        _rigidbody.velocity = Vector2.zero;
+    }
 }
